@@ -397,3 +397,84 @@ footer {
         margin: 10px 0;
     }
 }
+
+/* Estilos para o menu hambúrguer */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-menu i {
+    font-size: 24px;
+    color: #FFF;
+}
+
+/* Estilos para o menu em dispositivos móveis */
+@media (max-width: 576px) {
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 5px;
+    }
+
+    .navbar-items {
+        height: 24vh;
+        display: none;
+        flex-direction: column;
+        background-color: #232a31;
+        animation: fadeIn 0.7s;
+        position: absolute;
+        top: 80px;
+        right: -30px;
+        width: 30%;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .navbar-items.active {
+        display: flex;
+    }
+
+    .navbar-items li {
+        margin: -20px 0;
+    }
+
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .navbar-items li {
+        opacity: 0;
+        animation: fadeIn 0.2s both;
+    }
+
+    .navbar-items li:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .navbar-items li:nth-child(2) {
+        animation-delay: 0.1s;
+    }
+
+    .navbar-items li:nth-child(3) {
+        animation-delay: 0.15s;
+    }
+
+    .navbar-items li:nth-child(4) {
+        animation-delay: 0.2s;
+    }
+
+    .navbar-items.active li {
+        opacity: 1;
+
+    }
+}
